@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
@@ -166,6 +167,12 @@ main .songs {
   background: #181818;
   border-radius: 6px;
   cursor: pointer;
+}
+@media screen and (min-width: 1340px) {
+  .songs #list .card {
+    width: 300px; /* veya uygun bir değer */
+    /* Diğer stillendirme özellikleri buraya */
+  }
 }
 .songs #list .card figure {
   position: relative;

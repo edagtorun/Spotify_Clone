@@ -171,6 +171,10 @@ main .songs {
     background: #181818;
     border-radius: 6px;
     cursor: pointer;
+    @media screen and (min-width: 1340px) {
+      width: 300px; /* veya uygun bir değer */
+      /* Diğer stillendirme özellikleri buraya */
+    }
 
     figure {
       position: relative;
@@ -425,7 +429,7 @@ main .songs {
   background: white !important;
   color: black;
 
-    ::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background-color: gray !important;
   }
 
@@ -433,7 +437,7 @@ main .songs {
     background: rgb(209, 203, 203) !important;
   }
   form input {
-   box-shadow:  0 0 10px rgba(0, 0, 0, 0.345);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.345);
   }
   .card {
     background: white !important;
@@ -447,5 +451,4 @@ main .songs {
       background: gray;
     }
   }
-  
 }
