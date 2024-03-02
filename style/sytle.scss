@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-family: "poppins";
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 20px 10px;
+      display: flex;
+      gap: 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+      transition: all 0.3s;
+
+      &:hover {
+        background: rgb(32, 32, 32);
+      }
+
+      @media (max-width: 870px) {
+        span {
+          display: none;
+        }
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  #logo {
+    width: 40px;
+    display: none;
+  }
+  #text-logo {
+    width: 130px;
+  }
+
+  @media (max-width: 870px) {
+    #logo {
+      display: block;
+    }
+    #text-logo {
+      display: none;
+    }
+  }
+}
+
+main {
+  width: 100%;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 10px;
+  gap: 40px;
+
+  @media (max-width: 870px) {
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    margin-left: 20px;
+
+    input {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    input::placeholder {
+      font-size: 10px;
+    }
+    button {
+      background: #1db954;
+      height: 100%;
+      padding: 0 25px;
+      border: none;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      &:hover {
+        background: #0ff15e;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    @media (max-width: 870px) {
+      display: none;
+    }
+    li {
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 300ms;
+
+      &:hover {
+        background: rgb(60, 60, 60);
+      }
+    }
+  }
+}
+
+main .songs {
+  background: rgb(42, 42, 42);
+  height: 100%;
+}
+
+.songs #title {
+  text-transform: capitalize;
+  padding: 20px;
+}
+
+.songs #list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  height: 80vh;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    background: black;
+    width: 8px;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #0e9c3f;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+
+  .card {
+    width: 200px;
+    padding: 15px;
+    background: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+
+    figure {
+      position: relative;
+      img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      #play {
+        position: absolute;
+        right: 10px;
+        bottom: -20px;
+        opacity: 0;
+        background: #1db954;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        display: grid;
+        font-size: 23px;
+        transition: all 0.3s;
+
+        &:hover {
+          background: #0e9c3f;
+          scale: 0.9;
+        }
+      }
+    }
+
+    &:hover #play {
+      opacity: 1;
+      bottom: 20px;
+    }
+    h4 {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+//LOADER
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 0.5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 0.5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+//playing
+.play-area {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  background: linear-gradient(240deg, #a09e9e 0%, #2a2a2a 52%, #000000 90%);
+
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 40px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    padding: 10px;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+}
+.animate {
+  animation: turn 4s linear infinite;
+}
+
+//animasyon olusturma
+@keyframes turn {
+  //animasyin basladiginda sahip olacagi stiller
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//toogle
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  background-color: #ddd;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #ccc;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-switch-handle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -35px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaa;
+  text-shadow: 1px 1px #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+  transform: translateX(45px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #05c46b;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+  background-color: #05c46b;
+  box-shadow: inset 0 0 0 2px #04b360;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+  content: "On";
+  color: #05c46b;
+  right: -15px;
+}
+
+.toggle-switch
+  input[type="checkbox"]:checked
+  + .toggle-switch-background
+  .toggle-switch-handle {
+  transform: translateX(35px);
+}
+
+.light {
+  background: white !important;
+  color: black;
+
+    ::-webkit-scrollbar-track {
+    background-color: gray !important;
+  }
+
+  .songs {
+    background: rgb(209, 203, 203) !important;
+  }
+  form input {
+   box-shadow:  0 0 10px rgba(0, 0, 0, 0.345);
+  }
+  .card {
+    background: white !important;
+    color: black;
+  }
+
+  nav a {
+    color: black !important;
+
+    &:hover {
+      background: gray;
+    }
+  }
+  
+}

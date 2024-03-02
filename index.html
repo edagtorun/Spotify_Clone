@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style/sytle.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- left side -->
+<aside>
+    <img src="images/no-text-logo.png" id="logo">
+    <img src="images/text-logo.png" id="text-logo">
+
+    <nav>
+        <a href="/">
+            <i class="bi bi-house-fill"></i>
+            <span>Home</span>
+        </a>
+        <a href="/">
+            <i class="bi bi-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="/">
+            <i class="bi bi-bookmark-fill"></i>
+            <span>Your Library</span>
+        </a>
+        <a href="/">
+            <i class="bi bi-music-note-list"></i>
+            <span>Play List</span>
+        </a>
+        <a href="/">
+            <i class="bi bi-heart-fill"></i>
+            <span>Liked Songs</span>
+        </a>
+    </nav>
+
+</aside>
+
+<!-- main -->
+<main>
+    <!-- up side -->
+    <header>
+        <form id="search-form">
+            <input type="search" placeholder="What do you want to listen?">
+            <button>
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <ul>
+            <li>Premium</li>
+            <li>Support</li>
+            <li>Downloads</li>
+            <li>Sign Up</li>
+        </ul>
+        <label class="toggle-switch">
+            <input id="mode-checkbox" type="checkbox">
+            <div class="toggle-switch-background">
+              <div class="toggle-switch-handle"></div>
+            </div>
+          </label>
+          
+    </header>
+
+<!-- songs -->
+    <div class="songs">
+        <h2 id="title"> Popular Songs in Uk </h2>
+
+        <div id="list">
+            <!-- card -->
+            <div class="card">
+                <!-- <figure>
+                <img src="https://2.bp.blogspot.com/-Nc9YO_-F8yI/TcSIAB-nR-I/AAAAAAAAAGI/hPkuxqkqVcU/s1600/music-clipartMUSIC1.jpg"/>  
+                <div id="play">
+                <i id="play-btn" class="bi bi-play-fill"></i>
+                </div>
+                </figure>
+
+                <h4>Teddy Swims</h4>
+                <p>Lose Control</p> -->
+            </div>
+            <!-- card end -->
+        </div>
+    </div>
+</main>
+
+<!-- playing section -->
+<div class="play-area">
+    <!-- <div>
+        <img class="animate" src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/54/f4/92/54f49210-e260-b519-ebbd-f4f40ee710cd/054391342751.jpg/400x400cc.jpg" >
+
+    <div>
+        <p>Playing...</p>
+        <h3>Lose Yourself (From '8 Mile')</h3>
+    </div>    
+    </div>
+
+    <audio controls src=""></audio> -->
+</div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
